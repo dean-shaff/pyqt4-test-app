@@ -58,7 +58,7 @@ elif [[ ${SYSTEM} == *"Linux"* ]]; then
         if hash apt 2>/dev/null; then
             echo "Installing on Debian based system"
             sudo apt-get install python-qt4
-        else if hash dfn 2>/dev/null; then
+        elif hash dfn 2>/dev/null; then
             echo "Installing on Fedora based system"
             sudo dfn install python-qt4
         else
