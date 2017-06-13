@@ -20,7 +20,8 @@ class TestGUI(QtGui.QMainWindow):
 
         self.ui.button.clicked.connect(self.dummy)
         self.ui.button.clicked.connect(self.toggle_led)
-
+        self.ui.led.off()
+    
     @QtCore.pyqtSlot()
     def dummy(self):
         print("Dummy SLOT activated")
@@ -28,7 +29,7 @@ class TestGUI(QtGui.QMainWindow):
     @QtCore.pyqtSlot()
     def toggle_led(self):
         print("Toggling LED.")
-        self.ui.led.toggle()
+        self.ui.led.toggleState()
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)

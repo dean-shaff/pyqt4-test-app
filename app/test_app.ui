@@ -31,28 +31,25 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QTextBrowser" name="textBrowser"/>
+       </item>
        <item row="1" column="1">
-        <widget class="KLed" name="led">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="state">
-          <enum>KLed::Off</enum>
+        <widget class="LedWidget" name="led">
+         <property name="diameter">
+          <number>18</number>
          </property>
          <property name="color">
           <color>
-           <red>255</red>
-           <green>21</green>
-           <blue>95</blue>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
           </color>
          </property>
+         <property name="state">
+          <bool>true</bool>
+         </property>
         </widget>
-       </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QTextBrowser" name="textBrowser"/>
        </item>
       </layout>
      </widget>
@@ -73,9 +70,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLed</class>
+   <class>LedWidget</class>
    <extends>QWidget</extends>
-   <header>kled.h</header>
+   <header>ledwidget</header>
   </customwidget>
  </customwidgets>
  <resources/>

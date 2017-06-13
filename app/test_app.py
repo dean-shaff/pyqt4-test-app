@@ -42,19 +42,15 @@ class Ui_TestGUI(object):
         self.button.setSizePolicy(sizePolicy)
         self.button.setObjectName(_fromUtf8("button"))
         self.gridLayout.addWidget(self.button, 1, 0, 1, 1)
-        self.led = KLed(self.gridWidget)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.led.sizePolicy().hasHeightForWidth())
-        self.led.setSizePolicy(sizePolicy)
-        self.led.setState(KLed.Off)
-        self.led.setColor(QtGui.QColor(255, 21, 95))
-        self.led.setObjectName(_fromUtf8("led"))
-        self.gridLayout.addWidget(self.led, 1, 1, 1, 1)
         self.textBrowser = QtGui.QTextBrowser(self.gridWidget)
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         self.gridLayout.addWidget(self.textBrowser, 2, 0, 1, 2)
+        self.led = LedWidget(self.gridWidget)
+        self.led.setDiameter(18)
+        self.led.setColor(QtGui.QColor(0, 255, 0))
+        self.led.setState(True)
+        self.led.setObjectName(_fromUtf8("led"))
+        self.gridLayout.addWidget(self.led, 1, 1, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout_2.addWidget(self.gridWidget, 0, 0, 1, 1)
         TestGUI.setCentralWidget(self.centralwidget)
@@ -70,7 +66,7 @@ class Ui_TestGUI(object):
         QtCore.QMetaObject.connectSlotsByName(TestGUI)
 
     def retranslateUi(self, TestGUI):
-        TestGUI.setWindowTitle(_translate("TestGUI", "MainWindow", None))
+        TestGUI.setWindowTitle(_translate("TestGUI", "Test GUI", None))
         self.button.setText(_translate("TestGUI", "Eu gosto de tudo", None))
 
-from PyKDE4.kdeui import KLed
+from ledwidget import LedWidget
