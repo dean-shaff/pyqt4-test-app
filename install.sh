@@ -48,7 +48,10 @@ if [[ ${SYSTEM} == *"Darwin"* ]]; then
             # testPyQt4
             # echo "PyQt4 successfully installed? ${PYQTINSTALL}"
         fi
+    else
+        echo "PyQt4 already installed!"
     fi
+    
 elif [[ ${SYSTEM} == *"Linux"* ]]; then
     echo "Detected Linux OS..."
    # PYQTINSTALL=false
@@ -65,6 +68,8 @@ elif [[ ${SYSTEM} == *"Linux"* ]]; then
             echo "Trying to install with yum..."
             sudo yum install python-qt4
         fi
+    else
+        echo "PyQt4 already installed!"
     fi
 else
     echo "Couldn't detect the current OS. Exiting"
